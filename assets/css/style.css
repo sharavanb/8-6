@@ -1,0 +1,505 @@
+﻿/* Global Styles */
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #1f2937;
+    --light-bg: #f3f4f6;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Navbar Styles */
+.navbar-custom {
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-custom.sticky {
+    padding: 15px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-custom .navbar-nav .nav-link:hover,
+.navbar-custom .navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.home {
+    padding: 180px 0 120px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.overlay {
+    background: linear-gradient(45deg, rgba(0,0,0,0.8), rgba(0,0,0,0.6));
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.title-heading h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.home-caption {
+    font-size: 1.2rem;
+    max-width: 600px;
+}
+
+/* Features Section */
+.features {
+    padding: 100px 0;
+    background: var(--light-bg);
+}
+
+.features-box {
+    padding: 40px 30px;
+    background: white;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.features-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.features-icon {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: white;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact-form .form-control {
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.btn-light {
+    background: white;
+    color: var(--text-color);
+}
+
+.btn-light:hover {
+    background: var(--light-bg);
+    transform: translateY(-2px);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding: 25px 25px 0;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+/* Footer */
+footer {
+    padding: 30px 0;
+    background: var(--light-bg);
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+    .navbar-custom .navbar-nav {
+        padding: 15px 0;
+    }
+    
+    .title-heading h1 {
+        font-size: 2.5rem;
+    }
+    
+    .home {
+        padding: 140px 0 80px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .title-heading h1 {
+        font-size: 2rem;
+    }
+    
+    .features-box {
+        padding: 30px 20px;
+    }
+}
+
+/* Pricing Section */
+.pricing-box {
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.pricing-box.popular {
+    border-color: var(--primary-color);
+}
+
+.pricing-box.popular::before {
+    content: "Popular";
+    position: absolute;
+    top: 20px;
+    right: -35px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 40px;
+    transform: rotate(45deg);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pricing-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pricing-name {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.pricing-price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.pricing-price small {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.pricing-features li {
+    padding: 10px 0;
+    color: var(--text-color);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-features li i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.pricing-features li.disabled {
+    opacity: 0.5;
+}
+
+.pricing-features li.disabled i {
+    color: #ccc;
+}
+
+.pricing-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+/* Enhanced Button Styles */
+.btn {
+    padding: 12px 28px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,255,0.1);
+    transition: width 0.3s ease;
+}
+
+.btn:hover::after {
+    width: 100%;
+}
+
+/* Enhanced Footer Styles */
+footer {
+    padding: 50px 0 30px;
+    background: var(--light-bg);
+}
+
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
+
+footer .newsletter-form {
+    position: relative;
+}
+
+footer .newsletter-form .form-control {
+    padding-right: 120px;
+    border-radius: 8px;
+}
+
+footer .newsletter-form .btn {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    padding: 8px 20px;
+}
+
+/* Section Spacing */
+.section {
+    padding: 120px 0;
+    position: relative;
+}
+
+.section.bg-light {
+    background-color: var(--light-bg);
+}
+
+.section + .section {
+    margin-top: 40px;
+}
+
+/* Enhanced spacing for specific sections */
+#features {
+    padding-top: 160px;
+}
+
+#portfolio {
+    padding-top: 160px;
+}
+
+#pricing {
+    padding-top: 160px;
+}
+
+#contact {
+    padding-top: 160px;
+}
+
+@media (max-width: 991.98px) {
+    .section {
+        padding: 80px 0;
+    }
+    
+    #features,
+    #portfolio,
+    #pricing,
+    #contact {
+        padding-top: 100px;
+    }
+}
+
+/* Portfolio Styles */
+.features-box img {
+    transition: all 0.3s ease;
+}
+
+.features-box:hover img {
+    transform: scale(1.05);
+}
+
+.badge {
+    padding: 6px 12px;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.badge.bg-primary {
+    background-color: rgba(37, 99, 235, 0.1) !important;
+    color: var(--primary-color);
+}
+
+.btn-sm {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+}
+
+.gap-2 {
+    gap: 0.5rem !important;
+}
+
+.features-box .btn-outline-primary {
+    border-width: 2px;
+}
+
+/* Logo样式优化 */
+.navbar-custom .navbar-brand {
+    padding: 0;
+    margin-right: 16px;
+}
+
+.logo-container {
+    width: 190px;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.4); /* 放大logo */
+    transform-origin: left center; /* 从左侧开始变换 */
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.45); /* 悬停时稍微放大 */
+}
+
+/* 确保在小屏幕上logo也能正确显示 */
+@media (max-width: 768px) {
+    .logo-container {
+        width: 160px;
+        height: 45px;
+    }
+}
+
+/* Footer Logo Styles */
+footer .footer-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+footer .footer-logo:hover {
+    transform: scale(1.05);
+}
+
+/* 艺术字Logo样式 */
+.text-logo {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #2563eb, #1e40af);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.text-logo:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #1e40af, #2563eb);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .text-logo {
+        font-size: 1.8rem;
+    }
+}
